@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة عيد الميلاد ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #6c3d7d;
+            background: linear-gradient(135deg, #48335b, #16213e, #903682);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        #countdown {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #f8b500;
+            margin: 20px 0;
+            text-shadow: 0 2px 10px rgba(248, 181, 0, 0.5);
+        }
+
+        .gift-box {
+            font-size: 80px;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 10px #f8b500);
+        }
+
+        .shake {
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10px { transform: translate(-1px, -2px) rotate(-1deg); }
+            20px { transform: translate(-3px, 0px) rotate(1deg); }
+            30px { transform: translate(3px, 2px) rotate(0deg); }
+            40px { transform: translate(1px, -1px) rotate(1deg); }
+            50px { transform: translate(-1px, 2px) rotate(-1deg); }
+            60px { transform: translate(-3px, 1px) rotate(0deg); }
+            70px { transform: translate(3px, 1px) rotate(-1deg); }
+            80px { transform: translate(-1px, -1px) rotate(1deg); }
+            90px { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        #celebration {
+            display: none;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .card {
+            background: white;
+            color: #333;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .card h1 {
+            color: #1a1a2e;
+            margin-top: 0;
+        }
+
+        .user-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #000000;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #start-btn {
+            background: #f8b500;
+            color: #1a1a2e;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #start-btn:hover {
+            background: #fceabb;
+        }
+        .celebration-page {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a2e;
+    z-index: 10000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+   </style>
+</head>
+<body>
+
+    <div class="container" id="main-container">
+        <div id="start-section">
+            <button id="start-btn"> 🎂</button>
+        </div>
+
+        <div id="timer-section" style="display: none;">
+            <h2>🎉 استعد للمفاجأة 🎉</h2>
+            <div class="gift-box shake">🎁</div>
+            <div id="countdown">00:00:00</div>
+            <p>سيتم فتح الهدية تلقائياً عند انتهاء الوقت!</p>
+        </div>
+
+        <div id="celebration">
+            <div class="gift-box">🔓</div>
+            <div class="card">
+                <img src="monna.jpg" alt="صورة الشخص" class="user-img">
+                
+                <h1>في يوم زي ده، الأرض استقبلت أجمل هداياها، وأنا النهاردة بحتفل بإن الهدية دي بقت تخصني.🎂</h1>
+                <p>بيقولوا إن العمر بيتحسب بالدقائق والثواني، بس أنا من يوم ما عرفتك وأنا بحسب عمري بضحكتك.. فكل سنة وأنتي الضحكة اللي بتخلي للحياة طعم.♥️</p>
+           
+         <button onclick="showPage('page1', 'audio2')" style="margin-top:20px;">الي بعدههه🎁</button>
+            </div>
+        </div>
+    </div>
+<div id="page1" class="celebration-page">
+    <h1>اهلا 🎂</h1>
+    <p>أريد في هذا العام أن أشكركِ؛ لأنكِ اخترتِ أن تكوني الجزء الأجمل في حكايتي، ولأنكِ تمنحينني القوة بمجرد وجودك. أتمنى أن تكون أيامكِ القادمة تشبه نقاء قلبك، وأن يظل بريق عينيكِ هو دليلي في هذا العالم.
+</p>
+    <button onclick="showPage('page2', 'audio3')">الي بعده قولت</button>
+</div>
+
+<div id="page2" class="celebration-page">
+    <h1>.. ❤️</h1>
+    <p>
+كل سنه وانتي طيبه يحبيبتي ومعايا يارب دايما وسنه سعيده عليكي وتحققي كل الي بتتمنيه فيها وتتخرجي بقا عشان نخلص واشوفك احلى خريجه فالدنيا كدا وهو ايه القمر الي بيحلو اكتر من كل سنه دا هتحلو اكتر من كدا ايه🌚 قمر وحلويات تتاكل كدا اعااا 😩
+بحبك اوي ❤️🫂</p>
+    <button onclick="showPage('page3', 'audio')">يلا الي بعده</button>
+</div>
+
+
+<div id="page3" class="celebration-page" style="position: relative;">
+    <h2>Do you love me? ❤️</h2>
+    <div style="margin-top: 50px;">
+        <button onclick="playVoiceNote()">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()" style="position: absolute;">No</button>
+    </div>
+</div>
+
+<audio id="audio2" src="amr.mp3"></audio>
+<audio id="audio3" src="music.mp3"></audio>
+<audio id="audio4" src=""></audio> 
+
+    <script>
+        const celebrationSound = new Audio('love.mp3'); 
+
+        const targetDate = new Date(2026, 10, 15, 0, 0, 0).getTime(); 
+
+        let timerInterval;
+
+        document.getElementById('start-btn').addEventListener('click', function() {
+
+            document.getElementById('start-section').style.display = 'none';
+            document.getElementById('timer-section').style.display = 'block';
+            
+            startCountdown();
+        });
+
+        function startCountdown() {
+            timerInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = 
+                    (days > 0 ? days + " يوم " : "") + hours + "س " + minutes + "د " + seconds + "ث ";
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("timer-section").style.display = "none";
+                    document.getElementById("celebration").style.display = "block";
+                    
+                    celebrationSound.play(); (music.mp3)
+                }
+            }, 1000);
+        }
+
+        function showPage(nextPageId, nextAudioId) {
+    const mainCeleb = document.getElementById('celebration');
+    if(mainCeleb) mainCeleb.style.display = 'none';
+    
+    document.querySelectorAll('.celebration-page').forEach(p => p.style.display = 'none');
+
+    if(typeof celebrationSound !== 'undefined') celebrationSound.pause();
+    document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+
+    const nextP = document.getElementById(nextPageId);
+    if(nextP) {
+        nextP.style.display = 'flex'; 
+    }
+
+    const nextA = document.getElementById(nextAudioId);
+    if(nextA) nextA.play();
+}
+
+function moveButton() {
+    const btn = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+}
+
+function playVoiceNote() {
+    const voice = new Audio('me.mp3'); 
+    voice.play();
+    alert("أنا كمان بحبك! ❤️");
+}
+
+    </script>
+</body>
+</html>
